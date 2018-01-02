@@ -118,25 +118,26 @@
     ],	
     "nodes": [
          ["id", "posX", "posY", "posZ"],
-         //4.0L I6 Engine
-         {"frictionCoef":0.5},
+         //--2.0L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true},
          {"nodeMaterial":"|NM_METAL"},
-         {"selfCollision":true},
-         {"collision":true}
+         {"frictionCoef":0.5},
          {"group":"etk_engine"},
-         {"nodeWeight":142.8}, //25
-         {"engineGroup":"engine_block"}
-         ["e1r", -0.12, -1.08, 0.32,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
-         ["e1l", 0.14, -1.08, 0.32],
-         ["e2r", -0.12, -1.80, 0.32,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
-         ["e2l", 0.14, -1.80, 0.32],
-         {"selfCollision":true},
+         {"nodeWeight":19},
+         {"engineGroup":"engine_block"},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13},
+         ["e1r", -0.05, -0.97, 0.26],
+         ["e1l", 0.16, -0.97, 0.26],
+         ["e2r", -0.05, -1.56, 0.35],
+         ["e2l", 0.16, -1.56, 0.35],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
          {"engineGroup":["engine_block","engine_intake"]}
-         ["e3r", -0.12, -1.08, 0.82,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
-         ["e3l", 0.21, -1.08, 0.82],
-         ["e4r", -0.12, -1.80, 0.82,{"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
-         ["e4l", 0.21, -1.80, 0.82],
-         {"engineGroup":""}
+         ["e3r", -0.26, -0.97, 0.85],
+         ["e3l", 0.08, -0.97, 0.85],
+         ["e4r", -0.26, -1.56, 0.85{"isExhaust":"mainEngine"}],
+         ["e4l", 0.08, -1.56, 0.85],
+         {"engineGroup":""},
          {"group":""},
     ],
     "beams": [
@@ -179,6 +180,17 @@
           ["e1l","e3r"],
           ["e2r","e4l"],
           ["e2l","e4r"],
+          //radhose and intake breaking beams
+          {"beamSpring":4000,"beamDamp":40},
+          {"beamDeform":2000,"beamStrength":2000},
+          {"deformGroup":"radtube_break","deformationTriggerRatio":0.01},
+          ["f15", "e4l"],
+          ["f15r", "e4l"],
+          ["f15r", "e4r"],
+          ["f11", "e2l"],
+          ["f11rr", "e2l"],
+          ["f11rr", "e2r"],
+          {"deformGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 }
