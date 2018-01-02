@@ -8,8 +8,8 @@
     "slotType" : "etk_engine",
     "slots": [
         ["type", "default", "description"]
-        ["etk_exhaust_R","etk_exhaust_R", "Right Exhaust"],
-        ["etk_transmission","etk_transmission_4M", "Transmission"],
+        ["etk_exhaust","etk800_exhaust_i4", "Exhaust"],
+        ["etk_transmission","etk_transmission_6M", "Transmission"],
         ["etk_turbo","semi_turbo_300_semi", "Turbocharger"],		
         ["n2o_system","", "Nitrous Oxide System"],
     ],
