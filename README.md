@@ -9,7 +9,7 @@ Maybe some custom engine sounds if you're lucky :)
 
 <h3>Description of TCX Engine:</h3>
 
-- A custom Gavril TCX Engine
+- A Custom Gavril TCX Engine
 - Max RPM: 12000
 - Custom Linear Torque Curve
 - Custom Turbos from Gavril TCX Engine
@@ -38,14 +38,13 @@ Maybe some custom engine sounds if you're lucky :)
 # What Still Needs Work?
 - Bruckell Moonhawk (Position and scale has to be revised, add presets, and spinning radiator fan has to be added)
 - Gavril Barstow (Haven't even started yet :D)
-- ETK 800-Series (Engine textures not showing up)
 
 # Planned:
 - ETK I-Series
 - Every other car, possibly
 
 # How to Install Mods?
-1) Download the designated files. 
+1) Download the designated files.
 
 2) Create an empty zip file and name it whatever you want.
 
@@ -59,7 +58,7 @@ Maybe some custom engine sounds if you're lucky :)
 
 7) Place the zip file into C:\Users\ "your_username"\Documents\BeamNG.drive\mods
 
-8) Enable mods in BeamNG Drive 
+8) Enable mods in BeamNG Drive
 
 9) Enjoy!
 
