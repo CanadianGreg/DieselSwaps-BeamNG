@@ -34,13 +34,13 @@ Maybe some custom engine sounds if you're lucky :)
 # What's in Progress?
 - Gavril Barstow
 - ETK 800-Series
+- ETK I-Series
 
 # What Still Needs Work?
 - Bruckell Moonhawk (Position and scale has to be revised, add presets, and spinning radiator fan has to be added)
 - Gavril Barstow (Haven't even started yet :D)
 
 # Planned:
-- ETK I-Series
 - Every other car, possibly
 
 # How to Install Mods?
