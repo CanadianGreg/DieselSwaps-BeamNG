@@ -26,17 +26,17 @@ Maybe some custom engine sounds if you're lucky :)
 -  5860 lb/ft
 
 # What Works?
-- Nothing
+- Bruckell Moonhawk
 
 # What's in Progress?
-- Bruckell Moonhawk
+- Gavril Barstow
 
 # What Still Needs Work?
 - Everything
 
 # Planned:
 - ETK I-Series
-- Gavril Barstow
+- ETK 800-Series
 
 # How to Install Mods?
 1) Download the .jbeam file. 
