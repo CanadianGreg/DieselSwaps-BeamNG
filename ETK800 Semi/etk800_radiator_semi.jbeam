@@ -1,14 +1,14 @@
 {
-"etk800_radiator_semi": {
+"etk_radiator_semi": {
     "information":{
         "authors":"BeamNG, Greg O, Ryan W",
         "name":"Semi Radiator",
         "value":110,
     }
-    "slotType" : "etk800_radiator",
+    "slotType" : "etk_radiator",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["etk800_radiator", ["etk800_radiator","etk800_radsupport"]],
+         ["etk_radiator", ["etk_radiator","etk_radsupport"]],
     ],
     "mainEngine":{
         //cooling system
@@ -30,7 +30,7 @@
          {"nodeMaterial":"|NM_METAL"},
          {"selfCollision":true},
          {"collision":true}
-         {"group":"etk800_radiator"},
+         {"group":"etk_radiator"},
          {"nodeWeight":3.56},
          ["rad1", 0.0, -2.05, 0.6{"engineGroup":"radiator"}],
          {"group":""},

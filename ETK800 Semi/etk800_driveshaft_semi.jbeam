@@ -1,11 +1,11 @@
 {
-"etk800_driveshaft_semi": {
+"etk_driveshaft_semi": {
     "information":{
         "authors":"BeamNG, Greg O, Ryan W",
         "name":"Indestructible Semi Driveshaft",
         "value":250,
     }
-    "slotType" : "etk800_driveshaft",
+    "slotType" : "etk_driveshaft",
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"]
         //rear driveshaft
@@ -17,7 +17,7 @@
     },
     "props": [
         ["func"      , "mesh"               , "idRef:", "idX:", "idY:", "baseRotation"           , "rotation"            , "translation"        , "min", "max", "offset", "multiplier"],
-        ["driveshaft", "etk800_driveshaft", "ax3r"  , "ax3l", "tra1", {"x":-86.5, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360 , 360  , 0       , 1           ,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["driveshaft", "etk_driveshaft", "ax3r"  , "ax3l", "tra1", {"x":-86.5, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360 , 360  , 0       , 1           ,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
     ],
     "beams": [
           ["id1:", "id2:"],
