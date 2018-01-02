@@ -1,0 +1,27 @@
+{
+"etk800_driveshaft_semi_F": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"Indestructible Front Semi Driveshaft",
+        "value":800,
+    }
+    "slotType" : "etk800_driveshaft_F",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["shaft", "driveshaft_F", "transfercase", 2, {"breakTriggerBeam":"driveshaft_F", "uiName":"Front Driveshaft", "electricsName":"driveshaft_F", "friction":2}]
+    ],
+    "props": [
+        ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+        ["driveshaft_F", "etk800_driveshaft_F", "fdiff", "fx2l", "tra1",    {"x":90, "y":-7.2, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F","optional":true}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front driveshaft
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":0.01},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":1500,"beamStrength":3500000000},
+          {"beamLimitSpring":10001000,"beamLimitDamp":250},
+          ["fdiff","tcase", {"name":"driveshaft_F","optional":true,"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}
