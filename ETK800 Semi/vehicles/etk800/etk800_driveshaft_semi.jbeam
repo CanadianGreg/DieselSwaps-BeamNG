@@ -1,0 +1,33 @@
+{
+"etk_driveshaft_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"Indestructible Semi Driveshaft",
+        "value":250,
+    }
+    "slotType" : "etk_driveshaft",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear driveshaft
+        ["torsionReactor", "torsionReactorR", "gearbox", 1, {}]
+        ["shaft", "driveshaft", "torsionReactorR", 1, {"breakTriggerBeam":"driveshaft", "uiName":"Rear Driveshaft", "electricsName":"driveshaft", "friction":1}]
+    ],
+    "torsionReactorR": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "props": [
+        ["func"      , "mesh"               , "idRef:", "idX:", "idY:", "baseRotation"           , "rotation"            , "translation"        , "min", "max", "offset", "multiplier"],
+        ["driveshaft", "etk_driveshaft", "ax3r"  , "ax3l", "tra1", {"x":-86.5, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360 , 360  , 0       , 1           ,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":0.02},
+          {"beamDeform":6000,"beamStrength":7500000000},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":5001000,"beamLimitDamp":500},
+          ["ax3","tra1", {"name":"driveshaft","optional":true,"breakGroup":"driveshaft","deformGroup":"driveshaft"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+}
+}

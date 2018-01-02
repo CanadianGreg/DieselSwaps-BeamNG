@@ -1,0 +1,393 @@
+{
+"etk800_engine_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"Gavril TCX I6 Diesel Engine",
+        "value":6000,
+    }
+    "slotType" : "etk_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["etk_exhaust_R","etk_exhaust_R", "Right Exhaust"],
+        ["etk_transmission","etk_transmission_4M", "Transmission"],
+        ["etk_turbo","semi_turbo_300_semi", "Turbocharger"],		
+        ["n2o_system","", "Nitrous Oxide System"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+            "torque":[
+            ["rpm", "torque"]
+            [0, 0],			
+            [200, 400],
+            [500, 525],
+            [750, 580],
+            [1000, 595],
+            [1200, 600],
+            [1500, 600],
+            [1800, 630],
+            [2200, 660],
+            [2500, 700],
+            [3000, 750],
+            [4500, 800],
+            [5500, 900],
+            [6500, 1000],
+            [7500, 1100],
+            [8500, 1200],
+            [9500, 1300],
+            [10500, 1400],
+			[11500, 1500],
+			[12000, 1550],
+        ],
+
+        "idleRPM":450,
+        "maxRPM":12000,
+        "hasRevLimiter":false,
+        "inertia":2,
+        "friction":40
+        "dynamicFriction":0.2
+        //"burnEfficiency":0.35
+        "burnEfficiency":[
+            [0, 0.25],
+            [0.05, 0.35],
+            [0.4, 0.47],
+            [0.7, 0.44],
+            [1, 0.42],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.3
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"diesel",
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"iron"
+        "oilVolume":25
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":1500000
+        
+        "maxTorqueRating": 4000,
+        "maxOverTorqueDamage": 1500,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]}
+        "radiator": {"[engineGroup]:":["radiator"]}
+        "engineBlock": {"[engineGroup]:":["engine_block"]}
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "L6",
+        "mainGain": 15,
+        "maxLoadMix": 1,
+        "minLoadMix": 0.0,
+        "onLoadGain":1,
+        "offLoadGain":0.9,
+        "eqLowGain": -10,
+        "eqLowFreq": 200,
+        //"eqLowWidth": 0.1,
+        //"eqHighGain": -5,
+        //"eqHighFreq": 4000,
+        //"eqHighWidth": 0.1,
+        "lowCutFreq":100,
+        "eqFundamentalGain": -15,
+    }
+    "vehicleController": {
+        "clutchLaunchStartRPM":800,
+        "clutchLaunchTargetRPM":1200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":1000
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":2000
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["semi_engine", ["etk_engine"],[]{"pos":{"x":0,"y":1.6,"z":-0.4}}],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["radiatorFanSpin"  , "semi_coolingfan", "en2r","en2l","en4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],	
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.0L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_engine"},
+         {"nodeWeight":19},
+         {"engineGroup":"engine_block"},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13},
+         ["e1r", -0.05, -0.97, 0.26],
+         ["e1l", 0.16, -0.97, 0.26],
+         ["e2r", -0.05, -1.56, 0.35],
+         ["e2l", 0.16, -1.56, 0.35],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.26, -0.97, 0.85],
+         ["e3l", 0.08, -0.97, 0.85],
+         ["e4r", -0.26, -1.56, 0.85{"isExhaust":"mainEngine"}],
+         ["e4l", 0.08, -1.56, 0.85],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"{"isExhaust":"mainEngine"}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          //radhose and intake breaking beams
+          {"beamSpring":4000,"beamDamp":40},
+          {"beamDeform":2000,"beamStrength":2000},
+          {"deformGroup":"radtube_break","deformationTriggerRatio":0.01},
+          ["f15", "e4l"],
+          ["f15r", "e4l"],
+          ["f15r", "e4r"],
+          ["f11", "e2l"],
+          ["f11rr", "e2l"],
+          ["f11rr", "e2r"],
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"semi_turbo_300_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"T300 Turbocharger",
+        "value":1500,
+    }
+    "slotType" : "etk_turbo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["semi_turbo", ["etk_engine"],[]{"pos":{"x":0,"y":1.6,"z":-0.4}}],
+    ],
+    "turbocharger": {
+        "wastegateStart":35,
+        "wastegateLimit":40,
+        "maxExhaustPower": 10000,
+        "backPressureCoef": 0.000065,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0
+        "frictionCoef": 45.5,
+        "inertia":18,
+        "damageThresholdTemperature": 750,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -0.5],
+            [60000,     18],
+            [90000,     37],
+            [150000,    51],
+            [200000,    59],
+            [250000,    68],
+            [300000,    77],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.2,    0.1],
+            [250,   0.6,   0.1],
+            [500,  0.9,   0.2],
+            [800,  0.9,   0.9],
+            [1400,  0.9,    0.9],
+            [2000,  0.64,    0.7],
+            [2500,  0.31,    0.5],
+            [3000,  0.1,    0.3],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+}
+"semi_turbo_350_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"T350 Turbocharger",
+        "value":2000,
+    }
+    "slotType" : "etk_turbo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["semi_turbo", ["etk_engine"],[]{"pos":{"x":0,"y":1.6,"z":-0.4}}],
+    ],
+    "turbocharger": {
+        "wastegateStart":50,
+        "wastegateLimit":55,
+        "maxExhaustPower": 15000,
+        "backPressureCoef": 0.000065,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0
+        "frictionCoef": 50.5,
+        "inertia":22,
+        "damageThresholdTemperature": 775,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -0.5],
+            [60000,     18],
+            [90000,     37],
+            [150000,    51],
+            [200000,    59],
+            [250000,    68],
+            [300000,    77],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.2,    0.1],
+            [250,   0.6,   0.1],
+            [500,  0.9,   0.2],
+            [800,  0.9,   0.9],
+            [1400,  0.9,    0.9],
+            [2000,  0.64,    0.7],
+            [2500,  0.31,    0.5],
+            [3000,  0.1,    0.3],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },	
+}
+"semi_turbo_400_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"T400 Turbocharger",
+        "value":2700,
+    }
+    "slotType" : "etk_turbo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["semi_turbo", ["etk_engine"],[]{"pos":{"x":0,"y":1.6,"z":-0.4}}],
+    ],
+    "turbocharger": {
+        "wastegateStart":70,
+        "wastegateLimit":75,
+        "maxExhaustPower": 25000,
+        "backPressureCoef": 0.000065,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0
+        "frictionCoef": 55.5,
+        "inertia":25,
+        "damageThresholdTemperature": 800,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -0.5],
+            [60000,     18],
+            [90000,     37],
+            [150000,    51],
+            [200000,    59],
+            [250000,    68],
+            [300000,    77],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.2,    0.1],
+            [250,   0.6,   0.1],
+            [500,  0.9,   0.2],
+            [800,  0.9,   0.9],
+            [1400,  0.9,    0.9],
+            [2000,  0.64,    0.7],
+            [2500,  0.31,    0.5],
+            [3000,  0.1,    0.3],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+}
+"semi_turbo_600_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"T600 Turbocharger",
+        "value":4000,
+    }
+    "slotType" : "etk_turbo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["semi_turbo", ["etk_engine"],[]{"pos":{"x":0,"y":1.6,"z":-0.4}}],
+    ],
+    "turbocharger": {
+        "wastegateStart":90,
+        "wastegateLimit":95,
+        "maxExhaustPower": 45000,
+        "backPressureCoef": 0.000065,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0
+        "frictionCoef": 59.5,
+        "inertia":25,
+        "damageThresholdTemperature": 850,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -0.5],
+            [60000,     20],
+            [90000,     39],
+            [150000,    69],
+            [200000,    78],
+            [250000,    87],
+            [300000,    93],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.2,    0.1],
+            [250,   0.6,   0.1],
+            [500,  0.9,   0.2],
+            [800,  0.9,   0.9],
+            [1400,  0.9,    0.9],
+            [2000,  0.64,    0.7],
+            [2500,  0.31,    0.5],
+            [3000,  0.1,    0.3],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },	
+}
+}
