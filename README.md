@@ -6,14 +6,14 @@ T-Series engine swaps for most stock cars
 
 Maybe some custom engine sounds if you're lucky :)
 
-<h3>Description of Semi:</h3>
+<h3>Description of TCX Engine:</h3>
 
 - A custom Gavril TCX Engine
 - Max RPM: 12000
 - Custom Linear Torque Curve
 - Custom Turbos from Gavril TCX Engine
 
-<h3>Insane Stats of Semi (Not made up!):</h3>
+<h3>Insane Stats of TCX Engine (Not made up!):</h3>
 
 **Naturally Aspirated:**
 -  1164 bhp
@@ -55,7 +55,7 @@ Maybe some custom engine sounds if you're lucky :)
 
 6) Place the folder "vehicles" in the zip file.
 
-7) Place the zip file into C:\Users\"your_username"\Documents\BeamNG.drive\mods
+7) Place the zip file into C:\Users\ "your_username"\Documents\BeamNG.drive\mods
 
 8) Enable mods in BeamNG Drive 
 
