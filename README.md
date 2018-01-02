@@ -16,16 +16,16 @@ Maybe some custom engine sounds if you're lucky :)
 <h3>Insane Stats of TCX Engine (Not made up!):</h3>
 
 **Naturally Aspirated:**
--  1164 bhp
--  590 lb/ft
+- 2092 bhp
+- 928 lb/ft
 
 **T300 Turbo:**
--  5652 bhp
--  2866 lb/ft
+- 7771 bhp
+- 3448 lb/ft
 
 **T600 Turbo:**
--  11553 bhp
--  5860 lb/ft
+- 15238 bhp
+- 6762 lb/ft
 
 # What Works?
 - Bruckell Moonhawk
