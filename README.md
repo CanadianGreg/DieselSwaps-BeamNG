@@ -39,6 +39,8 @@ Maybe some custom engine sounds if you're lucky :)
 # What Still Needs Work?
 - Bruckell Moonhawk (Position and scale has to be revised, add presets, and spinning radiator fan has to be added)
 - Gavril Barstow (Haven't even started yet :D)
+- ETK 800-Series (Engine is too big, needs to be resized)
+- ETK I-Series (Engine is too big, needs to be resized)
 
 # Planned:
 - Every other car, possibly
