@@ -1,0 +1,76 @@
+{
+"etk800_brake_F_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"Front Semi Brakes",
+        "value":1000,
+    }
+    "slotType" : "etk800_brake_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //brake discs
+        ["etk800_brakedisc_FR", ["wheel_FR","wheelhub_FR"]],
+        ["etk800_brakedisc_FL", ["wheel_FL","wheelhub_FL"]],
+        ["etk800_caliper_F", ["etk800_hub_F"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8},
+        {"brakeTorque":16000},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":50},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.42},
+        {"brakeMass":45.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"etk800_brake_R_semi": {
+    "information":{
+        "authors":"BeamNG, Greg O, Ryan W",
+        "name":"Rear Semi Brakes",
+        "value":900,
+    }
+    "slotType" : "etk800_brake_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //brake discs
+        ["etk800_brakedisc_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["etk800_brakedisc_RL", ["wheel_RL","wheelhub_RL"], []],
+        ["etk800_caliper_R", ["etk800_hub_R"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.5},
+        {"brakeTorque":10000},
+        {"brakeInputSplit":0.4},
+        {"brakeSplitCoef":0.3},
+        {"parkingTorque":10000},
+        {"brakeSpring":25},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.42},
+        {"brakeMass":40.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+}
+}
