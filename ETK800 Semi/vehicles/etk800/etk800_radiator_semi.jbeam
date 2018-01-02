@@ -1,14 +1,14 @@
 {
-"etk_radiator_semi": {
+"etk800_radiator_semi": {
     "information":{
         "authors":"BeamNG, Greg O, Ryan W",
         "name":"Semi Radiator",
         "value":110,
     }
-    "slotType" : "etk_radiator",
+    "slotType" : "etk800_radiator",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["etk_radiator", ["etk_radiator","etk_radsupport"]],
+         ["etk800_radiator", ["etk_radiator"]],
     ],
     "mainEngine":{
         //cooling system
@@ -23,37 +23,10 @@
         "oilRadiatorEffectiveness":10000,
         "oilThermostatTemperature":110
         },
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         //Radiator
-         {"frictionCoef":0.5},
-         {"nodeMaterial":"|NM_METAL"},
-         {"selfCollision":true},
-         {"collision":true}
-         {"group":"etk_radiator"},
-         {"nodeWeight":3.56},
-         ["rad1", 0.0, -2.05, 0.6{"engineGroup":"radiator"}],
-         {"group":""},
-    ],
-
     "beams": [
           ["id1:", "id2:"],
           {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":1660830,"beamDamp":168},
-          {"beamDeform":11970,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.05}
-          //radiator
-          ["rad1","s1"],
-          ["rad1","s1r"],
-          ["rad1","s1l"],
-          ["rad1","s3r"],
-          ["rad1","s3l"],
-          ["rad1","s5"],
-          ["rad1","s6"],
-          ["rad1","s6r"],
-          ["rad1","s6l"],
-          ["rad1","s7"],
-          {"deformGroup":""}
+
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 }
