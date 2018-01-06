@@ -1,0 +1,10 @@
+{
+"Drivetrain":"AWD",
+"Body Style":"Wagon",
+"Weight":2649,
+"Description":"AWD Touring model with turbocharged T300 6-cylinder diesel engine",
+"Configuration":"Diesel T300",
+"Config Type":"Custom",
+"default_color":"Pearl White",
+"Transmission":"Automatic",
+}

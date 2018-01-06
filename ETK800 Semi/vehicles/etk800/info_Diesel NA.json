@@ -1,0 +1,10 @@
+{
+"Drivetrain":"AWD",
+"Body Style":"Wagon",
+"Weight":2649,
+"Description":"AWD Touring model with naturally aspirated 6-cylinder diesel engine",
+"Configuration":"Diesel NA",
+"Config Type":"Custom",
+"default_color":"Pearl White",
+"Transmission":"Automatic",
+}
