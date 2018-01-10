@@ -17,11 +17,11 @@
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],
     ],
-    "mainEngine":{
-            "torque":[
-            ["rpm", "torque"]
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"],
             [0, 0],			
-            [200, 400],
+            [200, 450],
             [500, 525],
             [750, 580],
             [1000, 595],
@@ -31,22 +31,16 @@
             [2200, 660],
             [2500, 700],
             [3000, 750],
-            [4500, 800],
-            [5500, 900],
-            [6500, 1000],
-            [7500, 1100],
-            [8500, 1200],
-            [9500, 1300],
-            [10500, 1400],
-			[11500, 1500],
-			[12000, 1550],
+            [3500, 850],
+            [4500, 1000],
+            [5500, 600],
         ],
 
-        "idleRPM":450,
-        "maxRPM":12000,
-        "hasRevLimiter":false,
-        "inertia":2,
-        "friction":40
+        "idleRPM":650,
+        "maxRPM":5500,
+        "hasRevLimiter": "hard",
+        "inertia":1.14, //2
+        "friction":26 //40
         "dynamicFriction":0.2
         //"burnEfficiency":0.35
         "burnEfficiency":[
@@ -120,7 +114,7 @@
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
          {"group":"etk_engine"},
-         {"nodeWeight":142.8},
+         {"nodeWeight":21}, //142.8
          {"engineGroup":"engine_block"},
          {"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13},
          ["e1r", -0.05, -0.97, 0.26],
