@@ -15,6 +15,7 @@ Maybe some custom engine sounds if you're lucky :)
 - Custom Turbos from Gavril TCX Engine
 
 <h3>Insane Stats of TCX Engine (Not made up!):</h3>
+<h3>Info needs to be revised</h3>
 
 **Naturally Aspirated:**
 - 2092 bhp
@@ -29,17 +30,15 @@ Maybe some custom engine sounds if you're lucky :)
 - 6762 lb/ft
 
 # What Works?
-- Bruckell Moonhawk
+- ETK 800-Series
 
 # What's in Progress?
-- Gavril Barstow
-- ETK 800-Series
+- Bruckell Moonhawk
 - ETK I-Series
 
 # What Still Needs Work?
 - Bruckell Moonhawk (Position and scale has to be revised, add presets, and spinning radiator fan has to be added)
 - Gavril Barstow (Haven't even started yet :D)
-- ETK 800-Series (Engine is too big, needs to be resized)
 - ETK I-Series (Engine is too big, needs to be resized)
 
 # Planned:
