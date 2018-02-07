@@ -19,18 +19,19 @@
     "mainEngine": {
         "torque":[
         ["rpm", "torque"]
-       	[0, 3000],
+       	[0, 7000],
 		[15000, 0],
 		[16000, 0],
 		[17000, 0],
 		[18000, 0],
+    [20000, 0],
 
     ],
-    "maxRPM":15000,
+    "maxRPM":22000,
         "inertia":0.04,
         "friction":5
         "dynamicFriction":0.005
-        "electricalEfficiency":0.98
+        "electricalEfficiency":0.10
         "torqueReactionNodes:":["e1l","e2l","e4r"]
         "energyStorage": "mainBattery",
         "requiredEnergyType":"electricEnergy",
