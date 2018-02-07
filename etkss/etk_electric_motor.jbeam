@@ -1,0 +1,141 @@
+{
+"etk_electric_motor": {
+    "information":{
+        "authors":"AdamB, GregO, BeamNG",
+        "name":"Ludicrous Dual Speed Electric Motor",
+        "value":2400,
+    }
+    "slotType" : "etkss_engine",
+	"slots": [
+        ["type", "default", "description"],
+        ["etkss_transfer_case","etk_transfer_case_AWD", "Transfer Case"{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["electricMotor", "mainEngine", "dummy", 0],
+		["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "mainEngine": {
+        "torque":[
+        ["rpm", "torque"]
+       	[0, 3000],
+		[15000, 0],
+		[16000, 0],
+		[17000, 0],
+		[18000, 0],
+
+    ],
+    "maxRPM":15000,
+        "inertia":0.04,
+        "friction":5
+        "dynamicFriction":0.005
+        "electricalEfficiency":0.98
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainBattery",
+        "requiredEnergyType":"electricEnergy",
+
+        //cooling and oil system
+        "thermalsEnabled":false
+
+        //node beam interface
+        "breakTriggerBeam":"engine",
+    },
+	 "torqueConverter": {
+        "converterDiameter": 0.26,
+        "converterStiffness":10,
+        "couplingAVRatio":0.92,
+        "stallTorqueRatio":1.75,
+    },
+	 "gearbox": {
+        "gearRatios":[-1.5, 0, 1.5, 1.0]
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":12,
+        "friction": 1,
+    },
+     "vehicleController": {
+	 "automaticModes":"PRND1",
+	 "lowShiftDownRPM":1000,
+     "lowShiftUpRPM":4000,
+     "highShiftDownRPM":2000,
+	 "highShiftUpRPM":7000,
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.0L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_engine"}
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":21.68}, //21.68
+         ["e1r", -0.34, -1.57, 0.35,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e1l", -0.34, -1.26, 0.35],
+         ["e2r", 0.17, -1.57, 0.35,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e2l", 0.17, -1.26, 0.35],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.34, -1.57, 0.77,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e3l", -0.34, -1.26, 0.77],
+         ["e4r", 0.17, -1.57, 0.77,{"isExhaust":true,"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e4l", 0.17, -1.26, 0.77],
+         {"engineGroup":""},
+         ["tc1", 0.0, -1.6, 0.45,{"chemEnergy":200,"burnRate":0.3,"flashPoint":1000,"specHeat":0.1,"smokePoint":900,"selfIgnitionCoef":false}],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":600000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"{"isExhaust":true}],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          ["tc1","e3l"],
+          ["tc1","e3r"],
+          ["tc1","e4l"],
+          ["tc1","e4r"],
+          ["tc1","e1l"],
+          ["tc1","e1r"],
+          {"disableMeshBreaking":true},
+          {"beamDeform":90000,"beamStrength":90000}
+          ["tc1","e2l"{"name":"driveshaft"}],
+          ["tc1","e2r"{"name":"driveshaft"}],
+          {"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}
